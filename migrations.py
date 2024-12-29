@@ -2,11 +2,14 @@ from models import db, Contacts
 from faker import Factory
 from app import app
 
-fake = Factory.create()
-# Spanish
-#fake = Factory.create('es_ES')
-# Reload tables
+
 with app.app_context():
+    # fake = Factory.create('es_ES')
+    fake = Factory.create('ar_PS')
+    # fake = Factory.create('he_il')
+    # Spanish
+    #fake = Factory.create('es_ES')
+    # Reload tables
     db.drop_all()
     db.create_all()
     # Make 100 fake contacts
